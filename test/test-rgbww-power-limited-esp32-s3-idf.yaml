@@ -2,7 +2,7 @@ substitutions:
   ref: main
 
 esphome:
-  name: test-rgbww-power-limited-esp32-s3-idf
+  name: test-rgbww-pl-esp32-s3-idf
   friendly_name: Test RGBWW Power Limited Light Component with ESP32-S3 and ESP-IDF Framework
 
 esp32:

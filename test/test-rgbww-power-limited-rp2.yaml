@@ -2,7 +2,7 @@ substitutions:
   ref: main
 
 esphome:
-  name: test-rgbww-power-limited-rp2
+  name: test-rgbww-pl-rp2
   friendly_name: Test RGBWW Power Limited Component with RP2
 
 rp2:
