@@ -38,11 +38,11 @@ jobs:
           ref: ${{ github.ref }}
 
       - name: Get latest ESPHome release tag
-        id: esphome-release             # The step ID to refer to later
+        id: esphome-release # The step ID to refer to later
         uses: oprypin/find-latest-tag@v1
         with:
-          repository: esphome/esphome   # The repository to scan
-          releases-only: true           # We know that all relevant tags have a GitHub release for them
+          repository: esphome/esphome # The repository to scan
+          releases-only: true # We know that all relevant tags have a GitHub release for them
 
       - name: Get last tested ESPHome release tag
         id: test-release
@@ -99,4 +99,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: "Update last successfully tested ESPHome release version to ${{steps.test-release.outputs.tag}}"
-

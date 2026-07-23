@@ -2,7 +2,7 @@ substitutions:
   ref: main
 
 esphome:
-  name: test-rgbww-power-limited-rp2
+  name: test-rgbww-pl-rp2
   friendly_name: Test RGBWW Power Limited Component with RP2
 
 rp2:
@@ -31,23 +31,23 @@ light:
     max_power: 0.6
 
 output:
-  - platform: ledc
-    pin: GPIO40
+  - platform: rp2040_pwm
+    pin: GPIO29
     id: output_red
     frequency: 1000 Hz
-  - platform: ledc
-    pin: GPIO39
+  - platform: rp2040_pwm
+    pin: GPIO28
     id: output_green
     frequency: 1000 Hz
-  - platform: ledc
-    pin: GPIO38
+  - platform: rp2040_pwm
+    pin: GPIO27
     id: output_blue
     frequency: 1000 Hz
-  - platform: ledc
-    pin: GPIO37
+  - platform: rp2040_pwm
+    pin: GPIO26
     id: output_cw
     frequency: 1000 Hz
-  - platform: ledc
-    pin: GPIO36
+  - platform: rp2040_pwm
+    pin: GPIO25
     id: output_ww
     frequency: 1000 Hz
