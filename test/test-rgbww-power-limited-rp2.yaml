@@ -32,22 +32,22 @@ light:
 
 output:
   - platform: rp2040_pwm
-    pin: GPIO40
+    pin: GPIO29
     id: output_red
     frequency: 1000 Hz
   - platform: rp2040_pwm
-    pin: GPIO39
+    pin: GPIO28
     id: output_green
     frequency: 1000 Hz
   - platform: rp2040_pwm
-    pin: GPIO38
+    pin: GPIO27
     id: output_blue
     frequency: 1000 Hz
   - platform: rp2040_pwm
-    pin: GPIO37
+    pin: GPIO26
     id: output_cw
     frequency: 1000 Hz
   - platform: rp2040_pwm
-    pin: GPIO36
+    pin: GPIO25
     id: output_ww
     frequency: 1000 Hz
