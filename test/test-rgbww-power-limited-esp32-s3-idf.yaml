@@ -1,0 +1,57 @@
+substitutions:
+  ref: main
+
+esphome:
+  name: test-rgbww-power-limited-esp32-s3-idf
+  friendly_name: Test RGBWW Power Limited Light Component with ESP32-S3 and ESP-IDF Framework
+
+esp32:
+  variant: ESP32S3
+  flash_size: 16MB
+  cpu_frequency: 240MHz
+  framework:
+    type: esp-idf
+
+external_components:
+  - source: github://mikelawrence/esphome-component-rgbww-power-limited@${ref}
+
+light:
+  - platform: rgbww_power_limited
+    id: rgbww_light_1
+    output_id: rgbww_light_1_output
+    name: "Light"
+    red: output_red
+    green: output_green
+    blue: output_blue
+    cold_white: output_cw
+    warm_white: output_ww
+    cold_white_color_temperature: 6500 K
+    warm_white_color_temperature: 2800 K
+    constant_brightness: false
+    color_interlock: false
+    restore_mode: RESTORE_DEFAULT_OFF
+    gamma_correct: 1.0
+    # Power limiting, Cap at 60% of total system power for this light
+    max_power: 0.6
+
+output:
+  - platform: ledc
+    pin: GPIO40
+    id: output_red
+    frequency: 1000 Hz
+  - platform: ledc
+    pin: GPIO39
+    id: output_green
+    frequency: 1000 Hz
+  - platform: ledc
+    pin: GPIO38
+    id: output_blue
+    frequency: 1000 Hz
+  - platform: ledc
+    pin: GPIO37
+    id: output_cw
+    frequency: 1000 Hz
+  - platform: ledc
+    pin: GPIO36
+    id: output_ww
+    frequency: 1000 Hz
