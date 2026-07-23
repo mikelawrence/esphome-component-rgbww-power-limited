@@ -31,23 +31,23 @@ light:
     max_power: 0.6
 
 output:
-  - platform: ledc
+  - platform: rp2040_pwm
     pin: GPIO40
     id: output_red
     frequency: 1000 Hz
-  - platform: ledc
+  - platform: rp2040_pwm
     pin: GPIO39
     id: output_green
     frequency: 1000 Hz
-  - platform: ledc
+  - platform: rp2040_pwm
     pin: GPIO38
     id: output_blue
     frequency: 1000 Hz
-  - platform: ledc
+  - platform: rp2040_pwm
     pin: GPIO37
     id: output_cw
     frequency: 1000 Hz
-  - platform: ledc
+  - platform: rp2040_pwm
     pin: GPIO36
     id: output_ww
     frequency: 1000 Hz
