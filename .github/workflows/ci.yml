@@ -83,7 +83,7 @@ jobs:
         #### Modify below here to match your project ####
         file:
           - test/test-rgbww-power-limited-esp32-s3-idf
-          - test/test-sen6x-esp32-s3-ard
+          - test/test-rgbww-power-limited-esp32-s3-ard
           - test/test-sen6x-rp2
         #### Modify above here to match your project ####
         esphome-version:
