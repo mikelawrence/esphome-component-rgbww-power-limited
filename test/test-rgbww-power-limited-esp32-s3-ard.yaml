@@ -1,6 +1,9 @@
 substitutions:
   ref: main
 
+logger:
+  level: VERY_VERBOSE
+
 esphome:
   name: test-rgbww-pl-esp32-s3-ard
   friendly_name: Test RGBWW Power Limited Light Component with ESP32-S3 and Arduino Framework
