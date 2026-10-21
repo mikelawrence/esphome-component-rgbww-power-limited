@@ -1,11 +1,16 @@
 #include "rgbww_power_limited_light.h"
 #include "esphome/core/log.h"
+#include "esphome/core/version.h"
 #include <cmath>
 
 namespace esphome {
 namespace rgbww_power_limited {
 
+#if ESPHOME_VERSION_CODE >= VERSION_CODE(2026, 10, 0)
+ESPHOME_LOG_TAG(TAG, "rgbww_power_limited");
+#else
 static const char *const TAG = "rgbww_power_limited";
+#endif
 
 light::LightTraits RGBWWPowerLimitedLight::get_traits() {
   auto traits = light::LightTraits();
