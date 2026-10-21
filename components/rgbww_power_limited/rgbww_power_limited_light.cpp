@@ -5,7 +5,7 @@
 namespace esphome {
 namespace rgbww_power_limited {
 
-ESPHOME_LOG_TAG(TAG, "rgbww_power_limited");
+static const char *const TAG = "rgbww_power_limited";
 
 light::LightTraits RGBWWPowerLimitedLight::get_traits() {
   auto traits = light::LightTraits();
