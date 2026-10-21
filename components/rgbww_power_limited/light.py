@@ -90,8 +90,7 @@ async def to_code(config):
         (CONF_COLD_WHITE, "set_cold_white"),
         (CONF_WARM_WHITE, "set_warm_white"),
     ]:
-        out = await cg.get_variable(config[conf_key])
-        cg.add(getattr(var, setter)(out))
+        await cg.add_variable(getattr(var, setter), config[conf_key])
 
     cg.add(var.set_cold_white_temperature(config[CONF_COLD_WHITE_COLOR_TEMPERATURE]))
     cg.add(var.set_warm_white_temperature(config[CONF_WARM_WHITE_COLOR_TEMPERATURE]))
