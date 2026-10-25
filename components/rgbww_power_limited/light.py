@@ -16,7 +16,6 @@ from esphome.const import (
     CONF_WARM_WHITE_COLOR_TEMPERATURE,
     __version__,
 )
-from esphome.core import Version
 
 CONF_MAX_POWER = "max_power"
 CONF_WEIGHT_RED = "weight_red"
@@ -93,7 +92,7 @@ async def to_code(config):
         (CONF_WARM_WHITE, "set_warm_white"),
     ]:
         # TODO: Remove this check when our minimum version is ESPHome 2026.11.0 or greater
-        if cv.Version.parse(__version__) >= cv.Version(2026,11,0):
+        if cv.Version.parse(__version__) >= cv.Version(2026, 11, 0):
             await cg.add_variable(getattr(var, setter), config[conf_key])
         else:
             out = await cg.get_variable(config[conf_key])
